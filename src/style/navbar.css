@@ -1,38 +1,147 @@
+/* Base Styles */
 .navbar {
-    background-color: #2c3e50;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-logo {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #f39c12;
+}
+
+/* Fancy Hamburger Button */
+.hamburger {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.icon {
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover .icon {
+  color: #f39c12;
+  transform: scale(1.1);
+}
+
+/* Animated Menu */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 400px;
+  height: 100vh;
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.menu-content {
+  width: 100%;
+  padding: 2rem;
+}
+
+/* Fancy Links */
+.nav-link {
+  position: relative;
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.link-text {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.link-hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #f39c12;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .link-text {
+  transform: translateX(10px);
+  color: #f39c12;
+}
+
+.nav-link:hover .link-hover {
+  transform: translateX(0);
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+  .hamburger {
+    display: none;
   }
   
   .nav-menu {
+    position: static;
+    height: auto;
+    width: auto;
+    background: transparent;
+    backdrop-filter: none;
     display: flex;
-    gap: 1.5rem;
+  }
+  
+  .menu-content {
+    display: flex;
+    gap: 2rem;
+    padding: 0;
   }
   
   .nav-link {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0;
   }
   
-  .nav-link:hover {
-    color: #63b3ed;
+  .link-hover {
+    bottom: -5px;
   }
+}
