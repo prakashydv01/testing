@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaPinterest, FaYoutube } from 'react-icons/fa';
 import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -265,7 +266,7 @@ const Footer = () => {
             
             
             <li><a href="/travel-tips">Travel Tips</a></li>
-            <li><a href="/about">About Us</a></li>
+            <Link><a href="/about">About Us</a></Link>
             
           </ul>
         </div>

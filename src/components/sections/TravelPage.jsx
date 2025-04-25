@@ -6,6 +6,8 @@ import TravelBox from '../layout/TravelBox';
 const TravelPage = () => {
   const navigate = useNavigate();
   
+  
+  
   // Sample travel data
   const travels = [
     {
@@ -46,8 +48,11 @@ const TravelPage = () => {
   // State management
   const [currentPage, setCurrentPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  
   const itemsPerPage = 3;
   const totalPages = Math.ceil(travels.length / itemsPerPage);
+  
+  
 
   // Fetch blog data and navigate to blog page
   const handleViewDetails = async (travelId) => {
