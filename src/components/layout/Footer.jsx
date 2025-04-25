@@ -10,7 +10,7 @@ const Footer = () => {
         .footer {
           background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
           color: white;
-          padding: 4rem 2rem;
+          padding: 2rem 1rem;
           font-family: 'Montserrat', sans-serif;
         }
         
@@ -19,13 +19,13 @@ const Footer = () => {
           margin: 0 auto;
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 3rem;
+          gap: 2rem;
         }
         
         .footer-logo {
-          font-size: 1.8rem;
+          font-size: 1.5rem;
           font-weight: 700;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
           font-family: 'Playfair Display', serif;
           background: linear-gradient(to right, #4a6cf7, #ff6b6b);
           -webkit-background-clip: text;
@@ -33,19 +33,21 @@ const Footer = () => {
         }
         
         .footer-about {
-          margin-bottom: 1.5rem;
-          line-height: 1.8;
+          margin-bottom: 1rem;
+          line-height: 1.6;
           color: #bdc3c7;
+          font-size: 0.9rem;
         }
         
         .footer-social {
           display: flex;
-          gap: 1rem;
+          gap: 0.8rem;
+          margin-top: 1rem;
         }
         
         .social-icon {
-          width: 40px;
-          height: 40px;
+          width: 36px;
+          height: 36px;
           border-radius: 50%;
           background: rgba(255,255,255,0.1);
           display: flex;
@@ -53,6 +55,7 @@ const Footer = () => {
           justify-content: center;
           transition: all 0.3s ease;
           cursor: pointer;
+          font-size: 0.9rem;
         }
         
         .social-icon:hover {
@@ -61,8 +64,8 @@ const Footer = () => {
         }
         
         .footer-heading {
-          font-size: 1.3rem;
-          margin-bottom: 1.5rem;
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
           position: relative;
           padding-bottom: 0.5rem;
           font-weight: 600;
@@ -73,7 +76,7 @@ const Footer = () => {
           position: absolute;
           left: 0;
           bottom: 0;
-          width: 50px;
+          width: 40px;
           height: 2px;
           background: #4a6cf7;
         }
@@ -81,10 +84,11 @@ const Footer = () => {
         .footer-links {
           list-style: none;
           padding: 0;
+          margin: 0;
         }
         
         .footer-links li {
-          margin-bottom: 0.8rem;
+          margin-bottom: 0.6rem;
         }
         
         .footer-links a {
@@ -94,6 +98,7 @@ const Footer = () => {
           display: flex;
           align-items: center;
           gap: 0.5rem;
+          font-size: 0.9rem;
         }
         
         .footer-links a:hover {
@@ -104,29 +109,33 @@ const Footer = () => {
         .contact-info {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 0.8rem;
         }
         
         .contact-item {
           display: flex;
           align-items: flex-start;
-          gap: 1rem;
+          gap: 0.8rem;
           color: #bdc3c7;
+          font-size: 0.9rem;
+          line-height: 1.4;
         }
         
         .contact-icon {
           color: #4a6cf7;
-          margin-top: 3px;
+          margin-top: 2px;
+          flex-shrink: 0;
         }
         
         .newsletter-input {
           width: 100%;
-          padding: 0.8rem 1rem;
+          padding: 0.7rem;
           border: none;
           border-radius: 4px;
-          margin-bottom: 1rem;
+          margin-bottom: 0.8rem;
           background: rgba(255,255,255,0.1);
           color: white;
+          font-size: 0.9rem;
         }
         
         .newsletter-input::placeholder {
@@ -137,7 +146,7 @@ const Footer = () => {
           background: linear-gradient(to right, #4a6cf7, #2541b2);
           color: white;
           border: none;
-          padding: 0.8rem 1.5rem;
+          padding: 0.7rem 1rem;
           border-radius: 4px;
           cursor: pointer;
           font-weight: 600;
@@ -146,6 +155,8 @@ const Footer = () => {
           align-items: center;
           justify-content: center;
           gap: 0.5rem;
+          font-size: 0.9rem;
+          width: 100%;
         }
         
         .newsletter-btn:hover {
@@ -155,17 +166,76 @@ const Footer = () => {
         
         .footer-bottom {
           max-width: 1200px;
-          margin: 3rem auto 0;
-          padding-top: 2rem;
+          margin: 2rem auto 0;
+          padding-top: 1.5rem;
           border-top: 1px solid rgba(255,255,255,0.1);
           text-align: center;
           color: #bdc3c7;
-          font-size: 0.9rem;
+          font-size: 0.8rem;
+          line-height: 1.4;
         }
         
+        /* Mobile-specific styles */
         @media (max-width: 768px) {
+          .footer {
+            padding: 1.5rem 1rem;
+          }
+          
           .footer-container {
             grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          
+          .footer-heading {
+            margin-top: 1rem;
+          }
+          
+          .footer-social {
+            justify-content: center;
+            margin-top: 1.5rem;
+          }
+          
+          .footer-bottom {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .footer-logo {
+            text-align: center;
+          }
+          
+          .footer-about {
+            text-align: center;
+          }
+          
+          .footer-heading {
+            text-align: center;
+          }
+          
+          .footer-heading:after {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          
+          .footer-links {
+            text-align: center;
+          }
+          
+          .footer-links a {
+            justify-content: center;
+          }
+          
+          .contact-item {
+            justify-content: center;
+            text-align: center;
+          }
+          
+          .newsletter-input, .newsletter-btn {
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
           }
         }
       `}</style>
@@ -173,7 +243,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* Column 1: About */}
         <div>
-          <div className="footer-logo">Wanderlust</div>
+          <div className="footer-logo">TurPlans</div>
           <p className="footer-about">
             Discover the world's most beautiful destinations with our curated travel experiences. 
             We help you create unforgettable memories.
@@ -191,12 +261,12 @@ const Footer = () => {
         <div>
           <h3 className="footer-heading">Quick Links</h3>
           <ul className="footer-links">
-            <li><a href="/destinations">Destinations</a></li>
-            <li><a href="/tours">Tours & Activities</a></li>
-            <li><a href="/hotels">Hotels & Resorts</a></li>
+       
+            
+            
             <li><a href="/travel-tips">Travel Tips</a></li>
             <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
+            
           </ul>
         </div>
 
@@ -210,7 +280,7 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <MdPhone className="contact-icon" />
-              <span>+1 (555) 123-4567</span>
+              <span>+9779809612558</span>
             </div>
             <div className="contact-item">
               <MdEmail className="contact-icon" />
@@ -222,7 +292,7 @@ const Footer = () => {
         {/* Column 4: Newsletter */}
         <div>
           <h3 className="footer-heading">Newsletter</h3>
-          <p style={{ color: '#bdc3c7', marginBottom: '1rem' }}>
+          <p style={{ color: '#bdc3c7', marginBottom: '1rem', fontSize: '0.9rem' }}>
             Subscribe to get special offers and travel inspiration
           </p>
           <input 

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 
 const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  
   const destinations = [
     {
       name: "Santorini, Greece",
@@ -80,7 +81,7 @@ const HeroSection = () => {
     animation: 'fadeInUp 1.2s ease-out',
     fontFamily: '"Montserrat", sans-serif',
     fontWeight: '300',
-    lineHeight: '1.6'
+    lineHeight: '1.5'
   };
 
   // Button styles
@@ -183,32 +184,7 @@ const HeroSection = () => {
           {destinations[currentImageIndex].name} — {destinations[currentImageIndex].tagline}
         </p>
 
-        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link 
-            to="/destinations" 
-            style={{ 
-              ...buttonStyles, 
-              background: 'white', 
-              color: '#222',
-              border: '2px solid white'
-            }}
-            className="explore-btn"
-          >
-            Explore Destinations
-          </Link>
-          <Link 
-            to="/featured" 
-            style={{ 
-              ...buttonStyles, 
-              border: '2px solid white',
-              background: 'transparent',
-              color: 'white'
-            }}
-            className="destinations-btn"
-          >
-            Featured Experiences
-          </Link>
-        </div>
+        
       </div>
 
       {/* Image dots navigation */}

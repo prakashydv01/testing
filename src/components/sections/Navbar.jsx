@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={() => setIsOpen(false)}>
-          TravelEscape
+          TurPlans
         </Link>
 
         {/* Fancy Hamburger Button */}
@@ -45,18 +45,15 @@ const Navbar = () => {
               <span className="link-text">Home</span>
               <span className="link-hover"></span>
             </Link>
-            <Link to="/favorites" className="nav-link" onClick={toggleMenu}>
-              <span className="link-text">Favorites</span>
+            <Link to="/blog" className="nav-link" onClick={toggleMenu}>
+              <span className="link-text">Blogs</span>
               <span className="link-hover"></span>
             </Link>
-            <Link to="#" className="nav-link" onClick={toggleMenu}>
+            <Link to="/about" className="nav-link" onClick={toggleMenu}>
               <span className="link-text">Abouts</span>
               <span className="link-hover"></span>
             </Link>
-            <Link to="#" className="nav-link" onClick={toggleMenu}>
-              <span className="link-text">Contacts</span>
-              <span className="link-hover"></span>
-            </Link>
+           
           </div>
         </div>
       </div>

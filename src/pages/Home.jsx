@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import HeroSection from '../components/sections/Hero';
 import Navbar from '../components/sections/Navbar';
-import DestinationsGrid from '../components/sections/Destination';
 
+import TravelPage from '../components/sections/TravelPage';
 import Footer from '../components/layout/Footer';
+
 
 const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -17,8 +18,9 @@ const HomePage = () => {
     <>
          <Navbar/>
       <HeroSection />
-      <DestinationsGrid searchQuery={searchQuery} onSearch={handleSearch} />
+    <TravelPage/>
       {/* Other sections can be added here */}
+     
     
       <Footer />
     </>
