@@ -266,7 +266,6 @@ const Footer = () => {
             
             <li><a href="/travel-tips">Travel Tips</a></li>
             <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/uploadBlogs">upload</Link></li>
             
           </ul>
         </div>
